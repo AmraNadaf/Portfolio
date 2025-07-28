@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+     body{
+        background-image: url("Projects.png");
+        background-repeat: no-repeat;
+     }
+            @font-face {
+        font-family: 'Halimum';
+        src: url("halimun (1)\\Halimun.ttf") format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    #projectTitle {
+        font-family: 'Halimum', cursive;
+        font-weight: normal;
+        font-style: normal;
+    }
+        .carousel-container {
+            scroll-behavior: smooth;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #374151;
+            transform: translateY(-2px);
+            font-weight: lighter;
+        }
+
+        #carouselSection
+        {
+           padding-left: 10%;
+           padding-left: 10%;
+        }
+
+        
+    </style>
+</head>
+<body class="bg-white text-black min-h-screen relative">
+    <!-- Decorative Flowers Background -->
+    <!-- Navigation Bar -->
+    <nav class="w-full py-6 px-8">
+        <div class="flex justify-end">
+            <ul class="flex space-x-8">
+                <li><a href="index.html" class="nav-link text-black font-medium">Home</a></li>
+                <li><a href="Projects.html" class="nav-link text-black font-medium">Projects</a></li>
+                <li><a href="#know-me" class="nav-link text-black font-medium">Know Me</a></li>
+                <li><a href="Professional Dairies.html" class="nav-link text-black font-medium">Professional Diaries</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-12 py-12 relative z-10">
+        <!-- Page Title -->
+        
+        <!-- Project Shelf Title -->
+        <h2 id="projectTitle" class="text-3xl text-center mb-12 transform transition-all duration-1000 translate-y-0">" The Project Shelf "</h2>
+        
+        <!-- Project Carousel with Arrow Navigation -->
+        <div id="carouselSection" class="relative opacity-0 transition-opacity duration-1000">
+            <!-- Left Arrow -->
+            <button id="leftArrow" onclick="scrollCarousel(-1)" class="absolute left-100 top-1/2 transform -translate-y-1/2 z-10 bg-white border-2 border-black text-black w-12 h-12 rounded-full hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            
+            <!-- Right Arrow -->
+            <button id="rightArrow" onclick="scrollCarousel(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white border-2 border-black text-black w-12 h-12 rounded-full hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            
+            <!-- Carousel Container -->
+            <div class="carousel-container overflow-hidden mx-16 border border-black rounded-lg p-4">
+                <div id="carousel" class="flex space-x-8 transition-transform duration-500 ease-in-out">
+                    <!-- Project Card 1 -->
+                <div class="project-card bg-white border border-black rounded-lg p-4 rounded-lg p-6 w-[500rem] h-[25rem] cursor-pointer" onclick="openProject('e-commerce-platform')">
+                    <div class="w-full h-28 bg-gray-100 rounded-lg mb-4 flex items-center justify-center border border-gray-300 overflow-hidden">
+                        <img src="images.jpg" alt="TumoVision Image" class="object-cover h-full w-full">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">TumoVision</h3>
+                    <p class="text-gray-700 font-size-12px">TumoVision is an algorithm designed for contouring, segmenting, identifying brain tumors accurately </p>
+                    <a href="https://www.researchgate.net/publication/380856542_DETECTION_AND_LOCALIZATION_OF_BRAIN_TUMOR_USING_DEEP_LEARNING_AND_COMPUTER_VISION">Go to Publication</a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white border border-black rounded-lg p-4 rounded-lg p-6 w-[500rem] h-[25rem] cursor-pointer" onclick="openProject('task-management-app')">
+                    <div class="w-full h-28 bg-gray-100 rounded-lg mb-4 flex items-center justify-center border border-gray-300">
+                        <img src="pexels-krisof-1252890.jpg" alt="Space-Image" class="object-cover h-full w-full">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+            
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Space Image Classifier</h3>
+                    <p class="text-gray-700">A Python based repo used for bulding a model that classifies between stars, nebulae and planets</p>
+                    <a href="https://github.com/AmraNadaf/spaceImageClassifier">Visit GitHub ></a>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white border border-black rounded-lg p-4 rounded-lg p-6 w-[500rem] h-[25rem] cursor-pointer" onclick="openProject('weather-dashboard')">
+                    <div class="w-full h-28 bg-gray-100 rounded-lg mb-4 flex items-center justify-center border border-gray-300">
+                        <img src="goldpricesoutlook1200-1743986532.jpg" alt="Space-Image" class="object-cover h-full w-full">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gold-price-prediction</h3>
+                    <p class="text-gray-700">Predicting gold price using machine learning</p>
+                    <a href="https://github.com/AmraNadaf/Gold-price-prediction">Visit GitHub ></a>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card bg-white border border-black rounded-lg p-4 rounded-lg p-6 w-[500rem] h-[25rem] cursor-pointer" onclick="openProject('portfolio-website')">
+                    <div class="w-full h-28 bg-gray-100 rounded-lg mb-4 flex items-center justify-center border border-gray-300">
+                        <img src="996f10ca-a2ae-42b7-b38c-473319eb6f85.jpg" alt="Space-Image" class="object-cover h-full w-full">
+                            <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"/>
+                            <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V9a1 1 0 00-1-1h-1v4.5a1.5 1.5 0 01-3 0V7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ocean Trash Path Detection</h3>
+                    <p class="text-gray-700">Upcoming Website......</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal (Hidden by default) -->
+    <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modalTitle" class="text-3xl font-bold">Project Details</h2>
+                <button onclick="closeProject()" class="text-black hover:text-gray-600 text-2xl font-bold">×</button>
+            </div>
+            <div id="modalContent" class="text-gray-700">
+                <!-- Project content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const cardWidth = 576; // 512px + 24px gap (w-[32rem] + space-x-6)
+        const carousel = document.getElementById('carousel');
+        const cardsToShow = 3;
+
+        function scrollCarousel(direction) {
+            const totalCards = carousel.children.length;
+            const maxIndex = Math.max(0, totalCards - cardsToShow);
+            
+            currentIndex += direction;
+            
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            
+            carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            
+            // Update arrow visibility
+            updateArrowVisibility();
+        }
+
+        function updateArrowVisibility() {
+            const leftArrow = document.getElementById('leftArrow');
+            const rightArrow = document.getElementById('rightArrow');
+            const totalCards = carousel.children.length;
+            const maxIndex = Math.max(0, totalCards - cardsToShow);
+            
+            // Hide left arrow if at the beginning
+            leftArrow.style.opacity = currentIndex === 0 ? '0.3' : '1';
+            leftArrow.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+            
+            // Hide right arrow if at the end
+            rightArrow.style.opacity = currentIndex >= maxIndex ? '0.3' : '1';
+            rightArrow.style.pointerEvents = currentIndex >= maxIndex ? 'none' : 'auto';
+        }
+
+        // Initialize arrow visibility
+        updateArrowVisibility();
+
+        // Page load animation
+        window.addEventListener('load', function() {
+            // First, center the title in the viewport
+            const projectTitle = document.getElementById('projectTitle');
+            projectTitle.style.position = 'fixed';
+            projectTitle.style.top = '50%';
+            projectTitle.style.left = '50%';
+            projectTitle.style.transform = 'translate(-50%, -50%)';
+            projectTitle.style.fontSize = '4rem';
+            projectTitle.style.zIndex = '50';
+            
+            // After 2 seconds, animate everything into place
+            setTimeout(() => {
+                // Animate title back to its position
+                projectTitle.style.position = 'static';
+                projectTitle.style.top = 'auto';
+                projectTitle.style.left = 'auto';
+                projectTitle.style.transform = 'translate(0, 0)';
+                projectTitle.style.fontSize = '1.875rem';
+                projectTitle.style.zIndex = 'auto';
+                
+                // Show navbar
+                document.getElementById('navbar').style.opacity = '1';
+                
+                // Show carousel after a slight delay
+                setTimeout(() => {
+                    document.getElementById('carouselSection').style.opacity = '1';
+                }, 300);
+                
+            }, 2000);
+        });
+
+        function openProject(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            
+            // Project data
+            const projects = {
+'e-commerce-platform': {
+    title: 'TumoVision: Brain Tumor Detection System',
+    content: `
+        <div class="space-y-6">
+            <div class="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center border border-black mb-6">
+                <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4">Project Overview</h3>
+            <p class="text-lg leading-relaxed">
+                TumoVision is a deep learning-powered system for the detection and localization of brain tumors using MRI images. It combines CNN-based classification with a custom-built ROI extraction algorithm for precision targeting.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4">Key Features</h3>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+                <li>Dual-Model Architecture using CNN and image processing for 96.15% accuracy</li>
+                <li>Custom TumoVision method for ROI extraction using pseudo-color mapping & masking</li>
+                <li>Flask-based web interface for easy image upload, analysis, and tumor visualization</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Technologies Used</h3>
+            <p class="text-lg">
+                Python, OpenCV, Flask, TensorFlow/Keras, HTML/CSS, Tailwind
+            </p>
+        </div>
+    `
+}
+,
+                'task-management-app': {
+                    title: 'Space Image Classifier',
+                    content: `
+                        <div class="space-y-6">
+                            <div class="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center border border-gray-300 mb-6">
+                                <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">Space Object Image Classifier – Highlights</h3>
+                            <p class="text-lg leading-relaxed">A collaborative task management application designed to help teams organize, track, and complete projects efficiently. Built with real-time synchronization and intuitive user interface.</p>
+                            
+                            <h3 class="text-2xl font-semibold mb-4">Key Features</h3>
+                            <ul class="list-disc list-inside space-y-2 text-lg">
+                                <li>Multi-Class Deep Learning Model</li>
+                                <li>Built a CNN classifier collected data from NASA's data repository</li>
+                                <li>Built small SQL database and a functional website for live interpretation</li>
+                                <li>Deployed as Flask Web App</li>
+                            </ul>
+                            
+                            <h3 class="text-2xl font-semibold mb-4">Technologies Used</h3>
+                            <p class="text-lg">Python Flask, Python, Tensorflow, SQL, OpenCV, HTML, CSS, JavaScript</p>
+                        </div>
+                    `
+                },
+                'weather-dashboard': {
+                    title: ' Gold Price Prediction – Highlights',
+                    content: `
+                        <div class="space-y-6">
+                            <div class="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center border border-gray-300 mb-6">
+                                <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">Project Overview</h3>
+                            <p class="text-lg leading-relaxed">An interactive weather dashboard that provides comprehensive weather information with beautiful visualizations. Features location-based forecasts, historical data analysis, and customizable widgets.</p>
+                            
+                            <h3 class="text-2xl font-semibold mb-4">Key Features</h3>
+                            <ul class="list-disc list-inside space-y-2 text-lg">
+                                <li>Time Series Forecasting with R</li>
+                                <li>Data Analysis & Visualization</li>
+                                <li>Model Evaluation & Performance</li>
+                            </ul>
+                            
+                            <h3 class="text-2xl font-semibold mb-4">Technologies Used</h3>
+                            <p class="text-lg">JavaScript, Chart.js, OpenWeather API, CSS Grid, Local Storage</p>
+                        </div>
+                    `
+                },
+                'portfolio-website': {
+                    title: 'Portfolio Website',
+                    content: `
+                        <div class="space-y-6">
+                            <div class="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center border border-gray-300 mb-6">
+                                <svg class="w-24 h-24 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"/>
+                                    <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V9a1 1 0 00-1-1h-1v4.5a1.5 1.5 0 01-3 0V7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4">Project Overview</h3>
+                            <p class="text-lg leading-relaxed">A modern, responsive portfolio website showcasing professional work, skills, and experience. Designed with clean aesthetics and smooth animations to create an engaging user experience.</p>
+                            
+                            <h3 class="text-2xl font-semibold mb-4">Key Features</h3>
+                            <ul class="list-disc list-inside space-y-2 text-lg">
+                                <li>Responsive design for all devices</li>
+                                <li>Smooth scrolling and animations</li>
+                                <li>Project showcase gallery</li>
+                                <li>Skills and experience timeline</li>
+                                <li>Contact form integration</li>
+                                <li>SEO optimized</li>
+                            </ul>
+                            
+                            <h3 class="text-2xl font-semibold mb-4">Technologies Used</h3>
+                            <p class="text-lg">HTML5, CSS3, JavaScript, GSAP, Netlify Forms</p>
+                        </div>
+                    `
+                },}
+            
+            const project = projects[projectId];
+            if (project) {
+                modalTitle.textContent = project.title;
+                modalContent.innerHTML = project.content;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeProject() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Navigation functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').substring(1);
+                
+                // Simple navigation simulation
+                if (target === 'home') {
+                    alert('Navigating to Home page...');
+                } else if (target === 'projects') {
+                    alert('You are already on the Projects page!');
+                } else if (target === 'know-me') {
+                    alert('Navigating to Know Me page...');
+                } else if (target === 'professional-diaries') {
+                    alert('Navigating to Professional Diaries page...');
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProject();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('projectModal');
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    closeProject();
+                }
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965b4cf922df6efe',t:'MTc1MzYxMDU0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
