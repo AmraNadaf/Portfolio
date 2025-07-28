@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amra Nadaf</title>
+    <link href="halimun (1)\Halimun.ttf" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: black;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 30px 50px;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: 300;
+            font-size: 18px;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+
+        }
+
+        .nav-links a:hover {
+            color: #111;
+        }
+
+        /* Social Icons */
+        .social-section {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 20px;
+            z-index: 1000;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 0.6;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+  .floral-outline {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+ ;
+}
+
+.flower-women {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7; /* keep it subtle and stylish */
+}
+
+.name-container {
+  position: absolute;
+  top: 50%;
+  left: 47.5%;
+  transform: translate(-52%, -52%);
+  text-align: center;
+  padding-top: 20%;
+
+}
+
+.name-text {
+  font-family: 'Halimum', serif;
+  font-size: 3.5rem;
+  font-style: italic;
+  color: #373636;
+  letter-spacing: 2px;
+}
+
+@font-face {
+  font-family: 'Halimum';
+  src: url('halimun (1)\Halimun.ttf') format('truetype');
+}
+
+.name-text {
+  font-family: 'Halimum', serif;
+}
+
+/* Keyframes */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Apply animation to elements */
+.flower-women {
+  animation: slideDown 1.2s ease-out forwards;
+}
+
+.name-container {
+  animation: slideUp 1.2s ease-out forwards;
+  animation-delay: 0.3s; /* Add delay if you want flower to come first */
+}
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 20px 30px;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .social-section {
+                bottom: 30px;
+                right: 30px;
+            }
+
+            .name-text {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .social-section {
+                bottom: 20px;
+                right: 10px;
+                gap: 15px;
+                padding-bottom: 10%;
+            }
+
+            .name-text {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="#know-me">Know me</a></li>
+            <li><a href="Professional Dairies.html">Professional Dairies</a></li>
+        </ul>
+    </nav>
+
+    <!-- Social Icons -->
+    <div class="social-section">
+        <!-- Mail Icon -->
+         <a href="mailto:nadafamra@gmail.com" target="_blank" rel="noopener noreferrer">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        </a>
+        <!-- LinkedIn Icon -->
+         <a href="https://www.linkedin.com/in/amra-nadaf-68b54b1b7/" target="_blank" rel="noopener noreferrer">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+        </svg>
+</a>
+        <!-- Instagram Icon -->
+         <a href="https://www.instagram.com/amra218/" target="_blank" rel="noopener noreferrer">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="black">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Floral Outline Background -->
+        <div class="floral-outline">
+            <img src="Website Homepage Design Specifications.png" alt="flower women" class="flower-women" />
+        <!-- Name Text -->
+        <div class="name-container">
+            <h1 class="name-text">Amra Nadaf</h1>
+        </div>
+    </main>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Since this is a single page, we'll just add a subtle animation
+                document.querySelector('.name-text').style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    document.querySelector('.name-text').style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+
+        // Add click functionality to social icons
+        document.querySelectorAll('.social-icon').forEach((icon, index) => {
+            icon.addEventListener('click', function() {
+                const links = [
+                    'mailto:amra.nadaf@example.com',
+                    'https://linkedin.com/in/amranadaf',
+                    'https://instagram.com/amranadaf'
+                ];
+                
+                // For demo purposes, show an alert
+                const platforms = ['Email', 'LinkedIn', 'Instagram'];
+                alert(`This would open ${platforms[index]}. Link: ${links[index]}`);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96597b49a15746b9',t:'MTc1MzU5MTQ2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
