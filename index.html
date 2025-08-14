@@ -244,35 +244,47 @@
         </div>
     </main>
 
-    <script>
-        // Add smooth scrolling for navigation links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function(e) {
+<script>
+    // Add smooth scrolling for navigation links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = link.getAttribute('href');
+
+            // If it's an internal anchor, smooth scroll
+            if(href.startsWith('#')){
                 e.preventDefault();
-                // Since this is a single page, we'll just add a subtle animation
+                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            } 
+            // If it's a page link, play animation then navigate
+            else {
+                e.preventDefault(); // temporarily stop navigation
                 document.querySelector('.name-text').style.transform = 'scale(1.02)';
                 setTimeout(() => {
                     document.querySelector('.name-text').style.transform = 'scale(1)';
-                }, 200);
-            });
+                    // navigate after animation
+                    window.location.href = href;
+                }, 200); // 200ms delay
+            }
         });
+    });
 
-        // Add click functionality to social icons
-        document.querySelectorAll('.social-icon').forEach((icon, index) => {
-            icon.addEventListener('click', function() {
-                const links = [
-                    'mailto:amra.nadaf@example.com',
-                    'https://linkedin.com/in/amranadaf',
-                    'https://instagram.com/amranadaf'
-                ];
-                
-                // For demo purposes, show an alert
-                const platforms = ['Email', 'LinkedIn', 'Instagram'];
-                alert(`This would open ${platforms[index]}. Link: ${links[index]}`);
-            });
+    // Add click functionality to social icons
+    document.querySelectorAll('.social-icon').forEach((icon, index) => {
+        icon.addEventListener('click', function() {
+            const links = [
+                'mailto:amra.nadaf@example.com',
+                'https://linkedin.com/in/amranadaf',
+                'https://instagram.com/amranadaf'
+            ];
+
+            const platforms = ['Email', 'LinkedIn', 'Instagram'];
+            alert(`This would open ${platforms[index]}. Link: ${links[index]}`);
         });
-    </script>
+    });
+</script>
+
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96597b49a15746b9',t:'MTc1MzU5MTQ2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
