@@ -145,10 +145,10 @@
     <nav class="w-full py-6 px-8">
         <div class="flex justify-end">
             <ul class="flex space-x-8">
-                <li><a href="index.html" class="nav-link text-black font-medium">Home</a></li>
-                <li><a href="projects.html" class="nav-link text-black font-medium">Projects</a></li>
+                <li><a href="https://amranadaf.github.io/Portfolio/" class="nav-link text-black font-medium">Home</a></li>
+                <li><a href="https://amranadaf.github.io/Portfolio/projects.html" class="nav-link text-black font-medium">Projects</a></li>
                 <li><a href="#know-me" class="nav-link text-black font-medium">Know Me</a></li>
-                <li><a href="professional.html" class="nav-link text-black font-medium">Professional Diaries</a></li>
+                <li><a href="https://amranadaf.github.io/Portfolio/professional.html" class="nav-link text-black font-medium">Professional Diaries</a></li>
             </ul>
         </div>
     </nav>
@@ -358,33 +358,56 @@
         </footer>
     </div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+<script>
+    // Smooth scrolling for navigation links and multi-page safe navigation
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = link.getAttribute('href');
+
+            // Internal anchors (start with #) → smooth scroll
+            if(href.startsWith('#')){
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
                 }
-            });
+            } 
+            // Page links → animate then navigate
+            else {
+                e.preventDefault(); // temporarily stop navigation
+                const nameText = document.querySelector('.name-text');
+                if(nameText){
+                    nameText.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        nameText.style.transform = 'scale(1)';
+                        // Navigate after animation
+                        window.location.href = href;
+                    }, 200);
+                } else {
+                    // fallback if .name-text not found
+                    window.location.href = href;
+                }
+            }
         });
+    });
 
-        // Tooltip functionality for education journey
-        function showTooltip(tooltipId) {
-            const tooltip = document.getElementById(tooltipId);
-            tooltip.style.opacity = '1';
-            tooltip.style.pointerEvents = 'auto';
-        }
+    // Tooltip functionality for education journey
+    function showTooltip(tooltipId) {
+        const tooltip = document.getElementById(tooltipId);
+        tooltip.style.opacity = '1';
+        tooltip.style.pointerEvents = 'auto';
+    }
 
-        function hideTooltip(tooltipId) {
-            const tooltip = document.getElementById(tooltipId);
-            tooltip.style.opacity = '0';
-            tooltip.style.pointerEvents = 'none';
-        }
-    </script>
+    function hideTooltip(tooltipId) {
+        const tooltip = document.getElementById(tooltipId);
+        tooltip.style.opacity = '0';
+        tooltip.style.pointerEvents = 'none';
+    }
+</script>
+
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965ce6f634063b9d',t:'MTc1MzYyNzMzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
