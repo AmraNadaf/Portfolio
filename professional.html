@@ -150,7 +150,7 @@
             <ul class="flex space-x-8">
                 <li><a href="https://amranadaf.github.io/Portfolio/" class="nav-link text-black font-medium">Home</a></li>
                 <li><a href="https://amranadaf.github.io/Portfolio/projects.html" class="nav-link text-black font-medium">Projects</a></li>
-                <li><a href="#know-me" class="nav-link text-black font-medium">Know Me</a></li>
+                <li><a href="https://amranadaf.github.io/Portfolio/know.html" class="nav-link text-black font-medium">Know Me</a></li>
                 <li><a href="https://amranadaf.github.io/Portfolio/professional.html" class="nav-link text-black font-medium">Professional Diaries</a></li>
             </ul>
         </div>
@@ -368,16 +368,16 @@
             const href = link.getAttribute('href');
 
             // Internal anchors (start with #) → smooth scroll
-            if(href.startsWith('#')){
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            } 
+            // if(href.startsWith('#')){
+            //     e.preventDefault();
+            //     const target = document.querySelector(href);
+            //     if (target) {
+            //         target.scrollIntoView({
+            //             behavior: 'smooth',
+            //             block: 'start'
+            //         });
+            //     }
+            // } 
             // Page links → animate then navigate
             else {
                 e.preventDefault(); // temporarily stop navigation
@@ -413,5 +413,6 @@
 
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965ce6f634063b9d',t:'MTc1MzYyNzMzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
