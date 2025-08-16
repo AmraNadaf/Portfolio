@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap'); */
+        
+        @font-face {
+            font-family: 'humble';
+            src: url("C:\\Users\\AAHILAHMED\\Downloads\\humble-signation\\Humble Signation.ttf");
+        }
+        
+        @font-face {
+            font-family: 'bubl';
+            src: url("C:\\Users\\AAHILAHMED\\Downloads\\cunia.bold.ttf");
+        }
+
+        @font-face {
+            font-family: 'amra';
+            src: url("C:\\Users\\AAHILAHMED\\Downloads\\boltruin-demo.regular.ttf");
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .cursive-font {
+            font-family: 'humble', cursive;
+        }
+        
+        .rounded-font {
+            font-family: 'bubl';
+            font-weight: 1500px;
+        }
+
+        
+        /* Carousel Styles */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-card {
+            min-width: 300px;
+            margin-right: 2rem;
+            flex-shrink: 0;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            margin: auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 1rem;
+            transform: scale(0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .carousel-nav:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-nav.prev {
+            left: 1rem;
+        }
+        
+        .carousel-nav.next {
+            right: 1rem;
+        }
+        
+        .glass-card {
+  background: rgba(255, 255, 255, 0.15); /* transparent white */
+  border-radius: 16px;
+  backdrop-filter: blur(10px); /* the frosted glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /* realistic soft shadow */
+}
+
+
+
+    </style>
+</head>
+<body class="bg-gray-100 text-black">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-4 w-full z-50 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-lg font-semibold" style="font-family:'amra'; font-size: 70px; padding-top: 20px;">
+                <b>amra.</b>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="flex space-x-8 text-sm">
+                <a href="https://amranadaf.github.io/Portfolio/" class="hover:text-gray-600 transition-colors duration-300">Home</a>
+                <a href="https://amranadaf.github.io/Portfolio/projects.html" class="hover:text-gray-600 transition-colors duration-300">Projects</a>
+                <a href="#hobbies" class="hover:text-gray-600 transition-colors duration-300">Know Me</a>
+                <a href="https://amranadaf.github.io/Portfolio/professional.html" class="hover:text-gray-600 transition-colors duration-300">Professional Dairies</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section id="home" class="min-h-screen pt-40" style="padding-top:'40px';">
+        <div class="max-w-7xl mx-auto px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Left Side - Quote -->
+                <div class="text-center lg:text-left fade-in" >
+                    <h1 class="cursive-font text-6xl lg:text-7xl font-medium leading-tight mb-8" style="font-size: 110px;">
+                        Everything is better in black and white
+                    </h1>
+                </div>
+                
+                <!-- Right Side - Image -->
+                <div class="flex justify-center lg:justify-end fade-in">
+                    <div class="w-[25rem] h-[30rem] bg-gray-200 rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Placeholder for your image -->
+                        <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                            <span class="text-6xl text-gray-600"><img src="C:\Users\AAHILAHMED\Desktop\self_img.jpg"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Know Me Button - Bottom Left -->
+            <div class="absolute bottom-0 left-0 fade-in" style="animation-delay: 0.5s; margin-right: 20px; padding-top: 40px;">
+            <button 
+                onclick="scrollTolife()" 
+                class="rounded-font text-[150px] font-bold text-black hover:text-white transition-all duration-300 px-0 py-0">
+                <b>KNOW ME</b>
+            </button>
+
+            </div>
+        </div>
+    </section>
+
+<!--<section id="life" class="min-h-[120vh]">
+     <div class="max-w-7xl mx-auto px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            
+        
+            <div class="flex justify-center lg:justify-start fade-in">
+                <div class="w-[25rem] h-[30rem] bg-gray-200 rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                        <span class="text-6xl text-gray-600">
+                            <img src="C:\Users\AAHILAHMED\Desktop\self_img.jpg">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="text-center lg:text-left fade-in">
+                <h1 class="cursive-font text-6xl lg:text-7xl font-medium leading-tight mb-8" style="font-size: 110px;">
+                    Everything is better in black and white
+                </h1>
+            </div>
+        </div>
+    </div> 
+
+</section>-->
+
+<section id="life" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-200 to-white">
+  <div class="glass-card w-[500px] h-[600px] p-8 flex flex-col justify-center" style="opacity: 1;">
+    <h2 class="text-center text-black font-bold mb-6" style="font-family: 'humble'; font-size: 80px;">
+      Philosophy
+    </h2>
+
+    <p class="text-black text-justify leading-relaxed mb-4" style="font-size: 14px; color: #474646;">
+      "Living is to experience." This is the philosophy I live by. I believe the entirety of our life is about experiencing, building, and becoming the best version of ourselves. Every choice we make, every person we meet, and every challenge we face shapes who we are. For me, life is not about waiting for the perfect moment, but about finding meaning in the imperfect ones. It’s about saying yes to opportunities, learning from mistakes, and embracing the unknown with curiosity instead of fear. I see growth as a constant journey, not a finish line, where each experience adds another layer to who I am becoming. In the end, what matters most is not how much time we had, but how fully we lived it.
+    </p>
+        
+    <p class="text-black text-justify leading-relaxed" style="font-size: 14px;color: #474646;">
+      I’m someone who’s always chasing new ideas, adventures, and little sparks of inspiration. Whether it’s experimenting with creative projects, diving into a new skill just for the fun of it, or getting lost in a late-night conversation, I like to keep life interesting. I’m curious by nature, drawn to stories—both mine and others’ and I believe even the smallest moments can leave the biggest marks. At my core, I’m just a person trying to create, explore, and leave the world a little better than I found it.
+    </p>
+  </div>
+</section>
+
+
+
+    <!-- Hobbies Carousel Section -->
+    <section id="hobbies" class="min-h-screen bg-white pt-40 text-black py-20">
+        <div class="max-w-7xl mx-auto px-8">
+            <!-- Section Title -->
+            <div class="text-center mb-16 fade-in">
+                <h1 class="rounded-font text-4xl font-bold mb-4" style="font-family: 'humble'; font-size: 100px;">My Hobbies</h1>
+                <p class="text-gray-600 pt-20 " style="font-family: 'amra';">click on any card to explore my passions</p>
+            </div>
+            
+            <!-- Carousel Container -->
+            <div class="carousel-container relative pt-10">
+                <!-- Navigation Buttons -->
+                <button class="carousel-nav prev" onclick="moveCarousel(-1)" style="background: rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.2); color: black;">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button class="carousel-nav next" onclick="moveCarousel(1)" style="background: rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.2); color: black;">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                
+                <!-- Carousel Track -->
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Ocean Card -->
+                    <div class="carousel-card bg-gray-100 rounded-xl p-8 cursor-pointer hover:bg-gray-200 transition-all duration-300 transform hover:scale-105" onclick="openModal('ocean')">
+                        <div class="text-center">
+                            <div class="text-6xl mb-6 filter grayscale">🌊</div>
+                            <h3 class="rounded-font text-2xl font-bold mb-4 text-black">Ocean & Marine Life</h3>
+                            <p class="text-gray-600 leading-relaxed">Exploring the mysteries of the deep blue sea and its incredible creatures</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Space Card -->
+                    <div class="carousel-card bg-gray-100 rounded-xl p-8 cursor-pointer hover:bg-gray-200 transition-all duration-300 transform hover:scale-105" onclick="openModal('space')">
+                        <div class="text-center">
+                            <div class="text-6xl mb-6 filter grayscale">🚀</div>
+                            <h3 class="rounded-font text-2xl font-bold mb-4 text-black">Space Physics</h3>
+                            <p class="text-gray-600 leading-relaxed">Contemplating the cosmos and the fundamental forces of the universe</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Japanese Culture Card -->
+                    <div class="carousel-card bg-gray-100 rounded-xl p-8 cursor-pointer hover:bg-gray-200 transition-all duration-300 transform hover:scale-105" onclick="openModal('japanese')">
+                        <div class="text-center">
+                            <div class="text-6xl mb-6 filter grayscale">🍜</div>
+                            <h3 class="rounded-font text-2xl font-bold mb-4 text-black">Japanese Culture</h3>
+                            <p class="text-gray-600 leading-relaxed">Immersed in the beauty and depth of Japanese traditions and language</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Listening to Radio garden Card -->
+                    <div class="carousel-card bg-gray-100 rounded-xl p-8 cursor-pointer hover:bg-gray-200 transition-all duration-300 transform hover:scale-105" onclick="openModal('photography')">
+                        <div class="text-center">
+                            <div class="text-6xl mb-6 filter grayscale">📸</div>
+                            <h3 class="rounded-font text-2xl font-bold mb-4 text-black">Radio Garden Listening</h3>
+                            <p class="text-gray-600 leading-relaxed">Listening to radio channels from all around the world</p>
+                        </div>
+                    </div>
+                
+                    
+                    <!-- Reading Card -->
+                    <div class="carousel-card bg-gray-100 rounded-xl p-8 cursor-pointer hover:bg-gray-200 transition-all duration-300 transform hover:scale-105" onclick="openModal('reading')">
+                        <div class="text-center">
+                            <div class="text-6xl mb-6 filter grayscale">📚</div>
+                            <h3 class="rounded-font text-2xl font-bold mb-4 text-black">Listening to audio books</h3>
+                            <p class="text-gray-600 leading-relaxed">Getting lost in other worlds through literature and knowledge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Each Hobby -->
+    
+    <!-- Ocean Modal -->
+    <div id="oceanModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="rounded-font text-3xl font-bold text-black">Ocean & Marine Life</h2>
+                <button onclick="closeModal('ocean')" class="text-gray-500 hover:text-black text-2xl">&times;</button>
+            </div>
+            <div class="space-y-6 text-gray-700">
+                <p class="text-lg leading-relaxed">
+                    The ocean has always fascinated me with its vast mysteries and incredible marine life. 
+                    From studying whale migration patterns to exploring coral reef ecosystems, 
+                    I find endless wonder in our planet's blue spaces.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">What I Love:</h3>
+                        <ul class="space-y-2">
+                            <li>• Marine biology and ecosystem studies</li>
+                            <li>• Whale watching and migration tracking</li>
+                            <li>• Coral reef conservation</li>
+                            <li>• Underwater photography</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Fun Facts:</h3>
+                        <ul class="space-y-2">
+                            <li>• Can identify 47 whale species by their calls</li>
+                            <li>• Dream of swimming with bioluminescent plankton</li>
+                            <li>• Once followed a sea turtle for 2 hours</li>
+                            <li>• Currently reading "The Soul of an Octopus"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Space Modal -->
+    <div id="spaceModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="rounded-font text-3xl font-bold text-black">Space Physics</h2>
+                <button onclick="closeModal('space')" class="text-gray-500 hover:text-black text-2xl">&times;</button>
+            </div>
+            <div class="space-y-6 text-gray-700">
+                <p class="text-lg leading-relaxed">
+                    The cosmos beckons with its infinite mysteries. My passion for space physics drives me to 
+                    explore everything from quantum mechanics to black hole theory, seeking to understand 
+                    the fundamental forces that govern our universe.
+                    I was a Semifinalist for a research essay competition for NASA scienctist for the day world-wide contest in 2019.
+                    Also Participated in the Breakthrough Junior challenege, still have my video up on youtbe my topic was "SONOLUMINESENCE"
+                    I've also participated in a national asteriod hunt contest.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Areas of Interest:</h3>
+                        <ul class="space-y-2">
+                            <li>• Quantum mechanics and particle physics</li>
+                            <li>• Black hole theory and relativity</li>
+                            <li>• Astrophotography and observation</li>
+                            <li>• Space exploration missions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Personal Notes:</h3>
+                        <ul class="space-y-2">
+                            <li>•If I were a physicist, I’d study droplet coalescence, Chladni patterns, and how sound travels through water in space. </li>
+                            <li>• Black holes fascinate me more than pizza</li>
+                            <li>• 73% sure aliens exist and they're cooler than us</li>
+                            <li>• Can name all visible backyard constellations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Japanese Culture Modal -->
+    <div id="japaneseModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="rounded-font text-3xl font-bold text-black">Japanese Culture</h2>
+                <button onclick="closeModal('japanese')" class="text-gray-500 hover:text-black text-2xl">&times;</button>
+            </div>
+            <div class="space-y-6 text-gray-700">
+                <p class="text-lg leading-relaxed">
+                    日本の文化に魅了されています。From learning the intricacies of the Japanese language 
+                    to appreciating traditional arts, cuisine, and philosophy, I find deep meaning in 
+                    this rich cultural heritage that spans centuries.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Cultural Interests:</h3>
+                        <ul class="space-y-2">
+                            <li>• Japanese language learning</li>
+                            <li>• Traditional arts and crafts</li>
+                            <li>• Anime and manga culture</li>
+                            <li>• Japanese cuisine and cooking</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">My Journey:</h3>
+                        <ul class="space-y-2">
+                            <li>• Tried making sushi 47 times (still learning!)</li>
+                            <li>• Watched over 200 anime series</li>
+                            <li>• Learning Japanese: こんにちは！私は変です！</li>
+                            <li>• Room has more Japanese items than a Tokyo shop</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photography Modal -->
+    <div id="photographyModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="rounded-font text-3xl font-bold text-black">Photography</h2>
+                <button onclick="closeModal('photography')" class="text-gray-500 hover:text-black text-2xl">&times;</button>
+            </div>
+            <div class="space-y-6 text-gray-700">
+                <p class="text-lg leading-relaxed">
+                    Through my lens, I capture the beauty of marine life and celestial objects, 
+                    from underwater coral gardens to starry night skies. Photography allows me to 
+                    freeze moments in time and share the wonder I see in the world around us.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Photography Styles:</h3>
+                        <ul class="space-y-2">
+                            <li>• Astrophotography and night sky</li>
+                            <li>• Marine life and underwater scenes</li>
+                            <li>• Street photography and candid moments</li>
+                            <li>• Landscape and nature photography</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Behind the Lens:</h3>
+                        <ul class="space-y-2">
+                            <li>• Wake up at 5 AM for perfect sunrise shots</li>
+                            <li>• Camera roll is 80% random dogs I meet</li>
+                            <li>• Astrophotography is my meditation</li>
+                            <li>• My camera is named "Clicky McClickface"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cooking Modal -->
+    <div id="cookingModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="rounded-font text-3xl font-bold text-black">Cooking</h2>
+                <button onclick="closeModal('cooking')" class="text-gray-500 hover:text-black text-2xl">&times;</button>
+            </div>
+            <div class="space-y-6 text-gray-700">
+                <p class="text-lg leading-relaxed">
+                    My kitchen is a laboratory where I experiment with Japanese cuisine and fusion dishes, 
+                    bringing the flavors of different cultures together. Sometimes it's a masterpiece, 
+                    sometimes it's a learning experience!
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Cooking Styles:</h3>
+                        <ul class="space-y-2">
+                            <li>• Japanese cuisine and sushi making</li>
+                            <li>• Fusion cooking experiments</li>
+                            <li>• Spicy food adventures</li>
+                            <li>• Pasta and noodle dishes</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Kitchen Chronicles:</h3>
+                        <ul class="space-y-2">
+                            <li>• Smoke alarm goes off only 23 times per month!</li>
+                            <li>• Pasta shape collection: 47 varieties</li>
+                            <li>• Put hot sauce on everything (even ice cream once)</li>
+                            <li>• Signature dish: "Surprise Stir-fry"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reading Modal -->
+    <div id="readingModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="rounded-font text-3xl font-bold text-black">Reading</h2>
+                <button onclick="closeModal('reading')" class="text-gray-500 hover:text-black text-2xl">&times;</button>
+            </div>
+            <div class="space-y-6 text-gray-700">
+                <p class="text-lg leading-relaxed">
+                    I dive into scientific journals, Japanese literature, and science fiction novels 
+                    that expand my understanding of the universe. Books are my portals to different 
+                    worlds and ways of thinking.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Reading Preferences:</h3>
+                        <ul class="space-y-2">
+                            <li>• Science fiction and fantasy novels</li>
+                            <li>• Scientific journals and research papers</li>
+                            <li>• Japanese literature and poetry</li>
+                            <li>• Marine biology and space science books</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="rounded-font text-xl font-semibold mb-3 text-black">Reading Habits:</h3>
+                        <ul class="space-y-2">
+                            <li>• Sci-fi novels are my escape pods from reality</li>
+                            <li>• Read 3 books simultaneously (organized chaos!)</li>
+                            <li>• Fantasy worlds feel more real than actual life</li>
+                            <li>• Write reviews in margins (sorry, libraries!)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const slidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+        const maxSlide = totalSlides - slidesToShow;
+
+        function moveCarousel(direction) {
+            const track = document.getElementById('carouselTrack');
+            currentSlide += direction;
+            
+            if (currentSlide < 0) {
+                currentSlide = maxSlide;
+            } else if (currentSlide > maxSlide) {
+                currentSlide = 0;
+            }
+            
+            const translateX = -(currentSlide * (300 + 32)); // card width + margin
+            track.style.transform = `translateX(${translateX}px)`;
+        }
+
+        function openModal(hobbyType) {
+            const modal = document.getElementById(hobbyType + 'Modal');
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(hobbyType) {
+            const modal = document.getElementById(hobbyType + 'Modal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function scrollTolife() {
+            document.getElementById('life').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.classList.remove('show');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Auto-advance carousel (optional)
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96f325dc112c9a8d',t:'MTc1NTIwMjc3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
