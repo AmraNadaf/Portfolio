@@ -1,418 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-             body{
-        background-image: url("Professional Dairies.png");
-        background-repeat: no-repeat;
-        background-size: 80%;
-     }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional · Amra Nadaf</title>
 
-     .tooltip {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    z-index: 999; /* Make sure it's above all other elements */
-    transition: opacity 0.3s ease-in-out;
-}
+  <script src="https://cdn.tailwindcss.com"></script>
 
-.relative {
-    overflow: visible;
-}
-#education svg {
-  pointer-events: none;
-}
-.milestone-dot1,
-.milestone-dot2,
-.milestone-dot3,
-.tooltip {
-  z-index: 10;
-}
-.tooltip {
-  pointer-events: auto;
-}
-
-
-
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Apply animation to elements */
-.welcome, .section-spacing {
-  animation: slideDown 1.2s ease-out forwards;
-}
-.tooltip {
-  z-index: 9999 !important;
-}
-
+  <style>
     @font-face {
-        font-family: 'Halimum';
-        src: url("halimun (1)\\Halimun.ttf") format('truetype');
-        font-weight: normal;
-        font-style: normal;
+      font-family: 'Halimum';
+      src: url("halimun (1)\\Halimun.ttf") format('truetype');
     }
 
-    .section-spacing .resume{
-        margin-left: 300px;
+    body {
+      background-color: #0b0b0b;
+      color: #e6e6e6;
+      font-family: Inter, system-ui, sans-serif;
     }
 
-    #education{
-        margin-top: 100px;
+    .accent { color: #f5c518; }
+    .muted { color: #9a9a9a; }
+
+    .card {
+      background: #121212;
+      border: 1px solid #222;
     }
-    
-    .welcome{
-        margin-left: 200px;
-        margin-bottom: 50px;
+
+    .section-title {
+      font-family: 'Halimum';
     }
 
     .tooltip {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: opacity 0.3s ease-in-out;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  width: max-content;
-  max-width: 250px;
-}
-
-.milestone-dot1{
-   margin-top: 7px; 
-}
-.milestone-dot2{
-   margin-top: 12px; 
-   margin-left: 5px;
-}
-.milestone-dot3{ 
-   margin-left: 27px;
-   margin-top:25px;
-}
-
-.resume-title
-{
-    font-family: 'Halimum';
-}
-
-.education{
-    font-family: 'Halimum';
-}
-
-
-.employment{
-    font-family: 'Halimum';
-}
-    #home h1{
-        font-family: "Halimum";
-        padding-bottom:60px;
+      background: #121212;
+      border: 1px solid #333;
+      color: #e6e6e6;
     }
-        .nav-link {
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        .nav-link:hover {
-            color: #6b7280;
-            font-weight: 500;
-        }
-
-        .section-spacing {
-            margin-bottom: 3rem;
-        }
-        .resume-button
-        {
-            font-family: 'Halimum';
-        }
-
-        .main-content{
-            margin-top: 150px;
-        }
-    </style>
+  </style>
 </head>
-<body class="bg-white text-black font-sans">
-    <!-- Navigation Bar -->
-    <nav class="w-full py-6 px-8">
-        <div class="flex justify-end">
-            <ul class="flex space-x-8">
-                <li><a href="https://amranadaf.github.io/Portfolio/" class="nav-link text-black font-medium">Home</a></li>
-                <li><a href="https://amranadaf.github.io/Portfolio/projects.html" class="nav-link text-black font-medium">Projects</a></li>
-                <li><a href="https://amranadaf.github.io/Portfolio/know.html" class="nav-link text-black font-medium">Know Me</a></li>
-                <li><a href="https://amranadaf.github.io/Portfolio/professional.html" class="nav-link text-black font-medium">Professional Diaries</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="main-content max-w-4xl mx-auto px-8 py-8">
-        <!-- Header Section -->
-        <section id="home" class="section-spacing text-center">
-            <h1 class="welcome text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-        </section>
+<body>
 
-        <!-- Resume Section - First -->
-        <section class="section-spacing">
-            <div class="resume bg-gray-50 border border-black rounded-lg p-8 text-center max-w-md mx-auto">
-                <h2 class="resume-title text-2xl font-semibold mb-4">Download My Resume</h2>
-                <p class="text-gray-700 mb-6">Get a comprehensive overview of my professional experience and skills</p>
-<a href="AmraNadaf_KeyUpdate_resume_240908_104422.pdf" class="resume-button bg-black text-white px-6 py-3 rounded-lg border border-black hover:bg-white hover:text-black transition-all duration-300 font-medium">
-    📄 Download
-</a>
+<!-- NAV -->
+<nav class="w-full py-6 px-8 border-b border-[#222]">
+  <div class="flex justify-end">
+    <ul class="flex space-x-8 text-sm muted">
+      <li><a href="#" class="hover:text-white">Home</a></li>
+      <li><a href="#" class="hover:text-white">Projects</a></li>
+      <li><a href="#" class="hover:text-white">Know Me</a></li>
+      <li><a href="#" class="hover:text-white">Professional</a></li>
+    </ul>
+  </div>
+</nav>
 
-                <div class="mt-4 text-sm text-gray-500">
-                    <p>• Updated: December 2024</p>
-                    <p>• Format: PDF</p>
-                    <p>• Size: ~150KB</p>
-                </div>
-            </div>
-        </section>
+<div class="max-w-4xl mx-auto px-8 py-20">
 
-        <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 gap-8">
-            <!-- Main Content -->
-            <div>
+  <!-- HEADER -->
+  <section class="mb-20 text-center">
+    <h1 class="text-4xl font-semibold section-title">
+      Professional Overview
+    </h1>
+    <p class="mt-4 muted text-sm">
+      Experience, education, and work history — no fluff.
+    </p>
+  </section>
 
-            <!-- Education Section -->
-            <section id="education" class="section-spacing">
-                <h2 class="education text-3xl font-bold mb-8 border-b-2 border-black pb-2">My Educational Journey</h2>
-                <div class="relative">
-                    <!-- Journey Path -->
-                    <svg class="absolute top-0 left-0 w-full h-80" viewBox="0 0 800 300" style="z-index: 1;">
-                        <path d="M 80 80 Q 250 120 400 160 Q 550 200 700 120" 
-                              stroke="#000" stroke-width="1" stroke-dasharray="10,5" fill="none"/>
-                    </svg>
-                    
-                    <!-- Education Milestones -->
-                    <div class="relative h-80" style="z-index: 2;">
-                        <!-- High School -->
-                        <div class="education-milestone1 absolute" style="left: 60px; top: 60px;">
-                            <div class="milestone-dot1 bg-black w-6 h-6 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300" 
-                                 onmouseover="showTooltip('hs-tooltip')" onmouseout="hideTooltip('hs-tooltip')"></div>
-                            <div class="milestone-label mt-4 text-center">
-                                <h3 class="milestone-text1 font-semibold text-lg">Chattrapati Shahu Vidyalaya</h3>
-                                <p class="text-sm text-gray-600">10th</p>
-                            </div>
-                            <!-- Tooltip -->
-                            <div id="hs-tooltip" class="tooltip absolute bg-black text-white p-4 rounded-lg shadow-lg w-64 -top-32 -left-20 opacity-0 transition-opacity duration-300">
-                                <h4 class="font-bold mb-2">Chhatrapati Shahu Vidyalaya</h4>
-                                <p class="text-sm mb-1"><strong>Duration:</strong> 2014 - 2018</p>
-                                <p class="text-sm mb-1"><strong>Percentage:</strong> 92%</p>
-                                <p class="text-sm mb-1"><strong>Focus:</strong> Science & Mathematics</p>
-                                <p class="text-sm">Participated in programming club and technology competitions. Built foundation in logical thinking and problem-solving.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- vivek -->
-                        <div class="education-milestone2 absolute" style="left: 380px; top: 140px;">
-                            <div class="milestone-dot2 bg-black w-6 h-6 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300"
-                                 onmouseover="showTooltip('college-tooltip')" onmouseout="hideTooltip('college-tooltip')"></div>
-                            <div class="milestone-label mt-4 text-center">
-                                <h3 class="milestone-text2 font-semibold text-lg">Vivekanand Junior College </h3>
-                                <p class="text-sm text-gray-600">12th</p>
-                            </div>
-                            <!-- Tooltip -->
-                            <div id="college-tooltip" class="tooltip absolute bg-black text-white p-4 rounded-lg shadow-lg w-64 -top-40 -left-20 opacity-0 transition-opacity duration-300">
-                                <h4 class="font-bold mb-2">Vivekanand Junior College</h4>
-                                <p class="text-sm mb-1"><strong>Duration:</strong> 2018 - 2022</p>
-                                <p class="text-sm mb-1"><strong>CGPA:</strong> 8.7/10</p>
-                                <p class="text-sm mb-1"><strong>Honors:</strong> Magna Cum Laude</p>
-                                <p class="text-sm mb-1"><strong>Specialization:</strong> Software Development</p>
-                                <p class="text-sm">Mastered data structures, algorithms, web technologies, and database systems. Led multiple team projects.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- B.tech -->
-                        <div class="education-milestone3 absolute" style="left: 680px; top: 100px;">
-                            <div class="milestone-dot3 bg-black w-6 h-6 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300"
-                                 onmouseover="showTooltip('cert-tooltip')" onmouseout="hideTooltip('cert-tooltip')"></div>
-                            <div class="milestone-label mt-4 text-center">
-                                <h3 class="milestone-text3 font-semibold text-lg">DY Patil College of Engineering & Technology</h3>
-                                <p class="text-sm text-gray-600">B.tech</p>
-                            </div>
-                            <!-- Tooltip -->
-                            <div id="cert-tooltip" class="tooltip absolute bg-black text-white p-4 rounded-lg shadow-lg w-64 -top-36 -left-20 opacity-0 transition-opacity duration-300">
-                                <h4 class="font-bold mb-2">DY Patil College of Engineering & Technology</h4>
-                                <p class="text-sm mb-1"><strong>Duration:</strong> 2022 - Present</p>
-                                <p class="text-sm mb-1"><strong>AWS Certified Developer</strong> - 2023</p>
-                                <p class="text-sm mb-1"><strong>Google Cloud Professional</strong> - 2023</p>
-                                <p class="text-sm mb-1"><strong>React Advanced Certification</strong> - 2022</p>
-                                <p class="text-sm">Staying current with industry trends and expanding technical expertise through continuous learning.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- Employment Section -->
-            <section id="employment" class="section-spacing">
-                <h2 class="employment text-3xl font-bold mb-6 border-b-2 border-black pb-2">Experience</h2>
-                <div class="space-y-6">
-                    <!-- Job 1 -->
-                    <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-300">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-lg">
-                                QK
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex justify-between items-start mb-2">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-black">Performance Engineering Trainee</h3>
-                                    <p class="text-gray-700 font-medium">Qualitykiosk pvt ltd.</p>
-                                    <p class="text-gray-600 text-sm">Full-time</p>
-                                </div>
-                                <div class="text-right text-sm text-gray-600">
-                                    <p>Jan 2024 - March 2025</p>
-                                    <p>1 yr 3 mos</p>
-                                    <p>Navi Mumbai, India</p>
-                                </div>
-                            </div>
-                            <div class="text-gray-800 text-sm space-y-1">
-                            </div>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Dynatrace</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Linux Server</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Python Scripting</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">SQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Job 2 -->
-                    <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-300">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-green-600 rounded flex items-center justify-center text-white font-bold text-lg">
-                                CC
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex justify-between items-start mb-2">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-black">Python Developer</h3>
-                                    <p class="text-gray-700 font-medium">Code Clause </p>
-                                    <p class="text-gray-600 text-sm">Part-time</p>
-                                </div>
-                                <div class="text-right text-sm text-gray-600">
-                                    <p>Dec 2022 - Jan 2023</p>
-                                    <p>2 mos</p>
-                                    <p>Kolhapur, India</p>
-                                </div>
-                            </div>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Python</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Tkinter</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Data Engineering</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Flask</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Job 3 -->
-                    <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-300">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-lg">
-                                RI
-                            </div>
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex justify-between items-start mb-2">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-black">Graphic Designing Intern</h3>
-                                    <p class="text-gray-700 font-medium">Relish Info-soft</p>
-                                    <p class="text-gray-600 text-sm">Internship</p>
-                                </div>
-                                <div class="text-right text-sm text-gray-600">
-                                    <p>Jul 2022 - Aug 2022</p>
-                                    <p>2 mos</p>
-                                    <p>On-site</p>
-                                </div>
-                            </div>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Graphic Design</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Adobe Photoshop</span>
-                                <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Front-end</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            </div>
-
-
-        </div>
-
-        <!-- Footer -->
-        <footer class="section-spacing text-center border-t border-gray-200 pt-8">
-            <p class="text-gray-600">© 2024 Professional Portfolio. All rights reserved.</p>
-        </footer>
+  <!-- RESUME -->
+  <section class="mb-24 flex justify-center">
+    <div class="card p-10 text-center w-full max-w-md">
+      <h2 class="section-title text-2xl mb-4">Resume</h2>
+      <p class="muted text-sm mb-6">
+        Concise summary of my academic and professional background.
+      </p>
+      <a href="AmraNadaf_KeyUpdate_resume_240908_104422.pdf"
+         class="inline-block px-6 py-3 border border-[#f5c518] text-[#f5c518] hover:bg-[#f5c518] hover:text-black transition">
+        Download PDF
+      </a>
     </div>
+  </section>
 
-<script>
-    // Smooth scrolling for navigation links and multi-page safe navigation
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = link.getAttribute('href');
+  <!-- EDUCATION -->
+  <section class="mb-28">
+    <h2 class="section-title text-3xl mb-10 border-b border-[#222] pb-2">
+      Education
+    </h2>
 
-            // Internal anchors (start with #) → smooth scroll
-            // if(href.startsWith('#')){
-            //     e.preventDefault();
-            //     const target = document.querySelector(href);
-            //     if (target) {
-            //         target.scrollIntoView({
-            //             behavior: 'smooth',
-            //             block: 'start'
-            //         });
-            //     }
-            // } 
-            // Page links → animate then navigate
-            else {
-                e.preventDefault(); // temporarily stop navigation
-                const nameText = document.querySelector('.name-text');
-                if(nameText){
-                    nameText.style.transform = 'scale(1.02)';
-                    setTimeout(() => {
-                        nameText.style.transform = 'scale(1)';
-                        // Navigate after animation
-                        window.location.href = href;
-                    }, 200);
-                } else {
-                    // fallback if .name-text not found
-                    window.location.href = href;
-                }
-            }
-        });
-    });
+    <div class="space-y-6">
+      <div class="card p-6">
+        <h3 class="font-semibold">DY Patil College of Engineering & Technology</h3>
+        <p class="muted text-sm">B.Tech · Artificial Intelligence & ML</p>
+        <p class="muted text-xs mt-1">2022 – Present</p>
+      </div>
 
-    // Tooltip functionality for education journey
-    function showTooltip(tooltipId) {
-        const tooltip = document.getElementById(tooltipId);
-        tooltip.style.opacity = '1';
-        tooltip.style.pointerEvents = 'auto';
-    }
+      <div class="card p-6">
+        <h3 class="font-semibold">Vivekanand Junior College</h3>
+        <p class="muted text-sm">12th · Science</p>
+      </div>
 
-    function hideTooltip(tooltipId) {
-        const tooltip = document.getElementById(tooltipId);
-        tooltip.style.opacity = '0';
-        tooltip.style.pointerEvents = 'none';
-    }
-</script>
+      <div class="card p-6">
+        <h3 class="font-semibold">Chhatrapati Shahu Vidyalaya</h3>
+        <p class="muted text-sm">10th · Science & Mathematics</p>
+      </div>
+    </div>
+  </section>
 
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965ce6f634063b9d',t:'MTc1MzYyNzMzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <!-- EXPERIENCE -->
+  <section>
+    <h2 class="section-title text-3xl mb-10 border-b border-[#222] pb-2">
+      Experience
+    </h2>
+
+    <div class="space-y-6">
+
+      <div class="card p-6">
+        <h3 class="font-semibold">Performance Engineering Trainee</h3>
+        <p class="muted text-sm">QualityKiosk · Jan 2024 – Mar 2025</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs">
+          <span class="px-2 py-1 border border-[#333]">Dynatrace</span>
+          <span class="px-2 py-1 border border-[#333]">Linux</span>
+          <span class="px-2 py-1 border border-[#333]">Python</span>
+          <span class="px-2 py-1 border border-[#333]">SQL</span>
+        </div>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="font-semibold">Python Developer (Part-time)</h3>
+        <p class="muted text-sm">Code Clause · Dec 2022 – Jan 2023</p>
+      </div>
+
+      <div class="card p-6">
+        <h3 class="font-semibold">Graphic Design Intern</h3>
+        <p class="muted text-sm">Relish Info-soft · 2022</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer class="border-t border-[#222] py-8 text-center text-xs muted">
+  © Amra Nadaf · Professional Portfolio
+</footer>
+
+</body>
 </html>
-
-
-
